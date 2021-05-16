@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".BankingActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_banking"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/img_blue"
+        android:layout_width="307dp"
+        android:layout_height="match_parent"
+        android:background="@color/black_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    
+    <ImageView
+        android:id="@+id/img_fon"
+       app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/blue"
+        app:layout_constraintLeft_toRightOf="@id/img_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"
+        android:layout_width="105dp"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/txt_swiftza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginRight="263dp"
+        android:layout_marginBottom="580dp"
+        android:text="Swiftza"
+        android:fontFamily="sans-serif"
+        android:visibility="visible"
+        android:textColor="#ccc"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_digital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="275dp"
+        android:fontFamily="sans-serif"
+        android:text="Digital\nBanking\nthat\nworks for\nyou"
+        android:textColor="@color/white"
+        android:textSize="38sp"
+        android:visibility="visible"
+        android:textStyle="normal"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="158dp"
+        android:layout_marginBottom="312dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_getStarted"
+        android:textColor="@color/blue"
+        android:text="Get Started"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif"
+        android:background="@drawable/item_start"
+        android:layout_marginTop="565dp"
+        android:layout_marginRight="201dp"
+        android:layout_marginLeft="42dp"
+        android:visibility="visible"
+        android:drawableEnd="@drawable/arrow_right"
+        android:layout_marginBottom="207dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="115dp"
+        android:layout_height="40dp"/>
+
+
+    <View
+        android:id="@+id/view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="visible"
+        android:background="@color/white"
+        android:layout_width="134dp"
+        android:layout_height="5dp"/>
+
+
+    <Button
+        android:id="@+id/btn_next"
+        android:text="next"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:textSize="14sp"
+        android:background="@drawable/item_next"
+        android:textStyle="normal"
+        android:visibility="gone"
+        android:layout_marginTop="656dp"
+        android:layout_marginBottom="106dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="140dp"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:id="@+id/btn_next_white"
+        android:text="next"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif"
+        android:textSize="14sp"
+        android:background="@drawable/item_start"
+        android:textStyle="normal"
+        android:visibility="gone"
+        android:layout_marginTop="656dp"
+        android:layout_marginBottom="106dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="140dp"
+        android:layout_height="50dp"/>
+
+    <com.google.android.material.tabs.TabLayout
+        app:tabBackground="@drawable/indificator_selector"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        android:layout_marginTop="614dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tad_indicator"
+        android:layout_marginBottom="188dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
