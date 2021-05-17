@@ -5,12 +5,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.banking.adapters.OnBoardAdapter;
@@ -20,15 +19,14 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.banking.R.drawable.item_start;
+
 public class BankingActivity extends AppCompatActivity {
 
     private ViewPager pager;
     private OnBoardAdapter adapter;
     TabLayout tadIndicator;
-    Button btn_next, btn_white_next;
-   TextView txt_swiftza, txt_digital;
-   Button btn_getStarted;
-   View view;
+    Button btn_next, btn_next_white, btn_start;
    View fon;
 
     @Override
@@ -37,13 +35,10 @@ public class BankingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_on_board);
         pager = findViewById(R.id.vp_banking);
         btn_next = findViewById(R.id.btn_next);
-        btn_white_next = findViewById(R.id.btn_next_white);
+        btn_next_white = findViewById(R.id.btn_next_white);
+        btn_start = findViewById(R.id.btn_start);
         tadIndicator = findViewById(R.id.tad_indicator);
-        txt_swiftza = findViewById(R.id.txt_swiftza);
-        txt_digital = findViewById(R.id.txt_digital);
-        btn_getStarted = findViewById(R.id.btn_getStarted);
         fon = findViewById(R.id.fon);
-        view = findViewById(R.id.view);
 //        checkShowingOnBoard();
         List<OnBoardModel> list = new ArrayList<>();
         list.add(new OnBoardModel("", "", 0));
@@ -62,36 +57,35 @@ public class BankingActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 if (position == 1) {
-                    btn_next.setText("next");
                     btn_next.setVisibility(View.VISIBLE);
-                } else {
+                }else {
                     btn_next.setVisibility(View.GONE);
                 }
 
                 if (position == 2) {
-                    btn_white_next.setVisibility(View.VISIBLE);
-                } else {
-                    btn_white_next.setVisibility(View.GONE);
+                    btn_next_white.setVisibility(View.VISIBLE);
+
+                }else {
+                    btn_next_white.setVisibility(View.GONE);
                 }
 
                 if (position >= 1){
                     fon.setVisibility(View.GONE);
                 }else {
+                    btn_next.setVisibility(View.GONE);
                     fon.setVisibility(View.VISIBLE);
                 }
 
                 if (position == 3) {
-                    btn_next.setVisibility(View.VISIBLE);
-                    btn_next.setText("start");
-                    btn_next.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(BankingActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(BankingActivity.this);
-                            preferences.edit().putBoolean("showOnBoard", true).apply();
-                        }
-                    });
+                    btn_start.setVisibility(View.VISIBLE);
+                }else {
+                    btn_start.setVisibility(View.GONE);
+                }
+
+                if (position != 0){
+                    tadIndicator.setVisibility(View.VISIBLE);
+                }else {
+                    tadIndicator.setVisibility(View.GONE);
                 }
 
             }

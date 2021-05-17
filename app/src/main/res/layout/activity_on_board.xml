@@ -111,9 +111,27 @@
         android:layout_height="50dp"/>
 
     <Button
+        android:id="@+id/btn_start"
+        android:text="start"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif"
+        android:textSize="14sp"
+        android:background="@drawable/item_next"
+        android:textStyle="normal"
+        android:visibility="gone"
+        android:layout_marginTop="656dp"
+        android:layout_marginBottom="106dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="140dp"
+        android:layout_height="50dp"/>
+
+    <Button
         android:id="@+id/btn_next_white"
         android:text="next"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:fontFamily="sans-serif"
         android:textSize="14sp"
         android:background="@drawable/item_start"
