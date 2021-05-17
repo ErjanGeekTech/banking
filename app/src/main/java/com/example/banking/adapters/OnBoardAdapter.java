@@ -28,13 +28,13 @@ public class OnBoardAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         Fragment fragment = new BankingItemFragment();
         switch (position){
-            case 0:
-                fragment = BankingItemFragment.newInstance(list.get(position).getTitle(), list.get(position).getDescription(), list.get(position).getImage());
-                break;
             case 1:
                 fragment = BankingItemFragment.newInstance(list.get(position).getTitle(), list.get(position).getDescription(), list.get(position).getImage());
                 break;
             case 2:
+                fragment = BankingItemFragment.newInstance(list.get(position).getTitle(), list.get(position).getDescription(), list.get(position).getImage());
+                break;
+            case 3:
                 fragment = BankingItemFragment.newInstance(list.get(position).getTitle(), list.get(position).getDescription(), list.get(position).getImage());
                 break;
         }
