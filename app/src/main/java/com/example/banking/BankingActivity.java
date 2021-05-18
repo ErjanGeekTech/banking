@@ -1,6 +1,7 @@
 package com.example.banking;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.banking.adapters.OnBoardAdapter;
+import com.example.banking.fragments.BankingItemFragment;
 import com.example.banking.model.OnBoardModel;
 import com.google.android.material.tabs.TabLayout;
 
@@ -27,7 +29,7 @@ public class BankingActivity extends AppCompatActivity {
     private OnBoardAdapter adapter;
     TabLayout tadIndicator;
     Button btn_next, btn_next_white, btn_start;
-   View fon;
+    View fon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class BankingActivity extends AppCompatActivity {
         btn_next_white = findViewById(R.id.btn_next_white);
         btn_start = findViewById(R.id.btn_start);
         tadIndicator = findViewById(R.id.tad_indicator);
+        initButtons();
         fon = findViewById(R.id.fon);
 //        checkShowingOnBoard();
         List<OnBoardModel> list = new ArrayList<>();
@@ -58,33 +61,33 @@ public class BankingActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 if (position == 1) {
                     btn_next.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     btn_next.setVisibility(View.GONE);
                 }
 
                 if (position == 2) {
                     btn_next_white.setVisibility(View.VISIBLE);
 
-                }else {
+                } else {
                     btn_next_white.setVisibility(View.GONE);
                 }
 
-                if (position >= 1){
+                if (position >= 1) {
                     fon.setVisibility(View.GONE);
-                }else {
+                } else {
                     btn_next.setVisibility(View.GONE);
                     fon.setVisibility(View.VISIBLE);
                 }
 
                 if (position == 3) {
                     btn_start.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     btn_start.setVisibility(View.GONE);
                 }
 
-                if (position != 0){
+                if (position != 0) {
                     tadIndicator.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     tadIndicator.setVisibility(View.GONE);
                 }
 
@@ -92,9 +95,31 @@ public class BankingActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
+                btn_start.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(BankingActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                btn_next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        pager.setCurrentItem(pager.getCurrentItem() + 1);
+                    }
+                });
+                btn_next_white.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        pager.setCurrentItem(pager.getCurrentItem() + 1);
+                    }
+                });
             }
         });
+    }
+
+    private void initButtons() {
+
     }
 
 //    private void checkShowingOnBoard() {
